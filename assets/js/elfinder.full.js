@@ -260,7 +260,8 @@
 					for (var i in data.images) {
 						if (self.cdc[i]) {
 							self.cdc[i].tmb = data.images[i];
-							$('div[key="'+i+'"]>p', self.view.cwd).css('background', ' url("'+data.images[i]+'") 0 0 no-repeat');
+							$('div[key="'+i+'"]>p', self.view.cwd).css('background', ' url("'+data.images[i]+'") no-repeat center center fixed');
+							$('div[key="'+i+'"]>p', self.view.cwd).css('background-size', 'cover');
 						}
 						
 					}
