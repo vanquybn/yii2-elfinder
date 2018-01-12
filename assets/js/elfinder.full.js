@@ -1037,7 +1037,7 @@ elFinder.prototype.view = function(fm, el) {
 	 * Render one file as icon
 	*/
 	this.renderIcon = function(f) {
-		var str = '<p'+(f.tmb ? ' style="'+"background:url('"+f.tmb+"') 0 0 no-repeat"+'"' : '')+'/><label>'+this.formatName(f.name)+'</label>';
+		var str = '<p'+(f.tmb ? ' style="'+"background:url('"+f.tmb+"') no-repeat center center fixed"+';background-size:cover;"' : '')+'/><label>'+this.formatName(f.name)+'</label>';
 		if (f.link || f.mime == 'symlink-broken') {
 			str += '<em/>';
 		}
