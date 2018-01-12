@@ -260,7 +260,7 @@
 					for (var i in data.images) {
 						if (self.cdc[i]) {
 							self.cdc[i].tmb = data.images[i];
-							$('div[key="'+i+'"]>p', self.view.cwd).css('background', ' url("'+data.images[i]+'") no-repeat center center fixed');
+							$('div[key="'+i+'"]>p', self.view.cwd).css('background', ' url("'+data.images[i]+'") no-repeat');
 							$('div[key="'+i+'"]>p', self.view.cwd).css('background-size', 'cover');
 						}
 						
@@ -1037,7 +1037,7 @@ elFinder.prototype.view = function(fm, el) {
 	 * Render one file as icon
 	*/
 	this.renderIcon = function(f) {
-		var str = '<p'+(f.tmb ? ' style="'+"background:url('"+f.tmb+"') no-repeat center center fixed"+';background-size:cover;"' : '')+'/><label>'+this.formatName(f.name)+'</label>';
+		var str = '<p'+(f.tmb ? ' style="'+"background:url('"+f.tmb+"') no-repeat"+';background-size:cover;"' : '')+'/><label>'+this.formatName(f.name)+'</label>';
 		if (f.link || f.mime == 'symlink-broken') {
 			str += '<em/>';
 		}
@@ -2792,7 +2792,7 @@ elFinder.prototype.quickLook = function(fm, el) {
 		self.size.text(self.fm.view.formatSize(f.size));
 		self.date.text(self.fm.i18n('Modified')+': '+self.fm.view.formatDate(f.date));
 		f.dim && self.add.append('<span>'+f.dim+' px</span>').show();
-		f.tmb && self.ico.css('background', 'url("'+f.tmb+'") no-repeat center center fixed');
+		f.tmb && self.ico.css('background', 'url("'+f.tmb+'") no-repeat');
 		if (f.url) {
 			self.url.text(f.url).attr('href', f.url).show();
 			for (var i in self.plugins) {
