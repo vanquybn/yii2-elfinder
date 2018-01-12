@@ -2792,7 +2792,7 @@ elFinder.prototype.quickLook = function(fm, el) {
 		self.size.text(self.fm.view.formatSize(f.size));
 		self.date.text(self.fm.i18n('Modified')+': '+self.fm.view.formatDate(f.date));
 		f.dim && self.add.append('<span>'+f.dim+' px</span>').show();
-		f.tmb && self.ico.css('background', 'url("'+f.tmb+'") 0 0 no-repeat');
+		f.tmb && self.ico.css('background', 'url("'+f.tmb+'") no-repeat center center fixed');
 		if (f.url) {
 			self.url.text(f.url).attr('href', f.url).show();
 			for (var i in self.plugins) {
