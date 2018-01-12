@@ -1919,7 +1919,7 @@ class elFinder {
      **/
     protected function _hash($path)
     {
-        return md5($path);
+        return md5(basename($path));
     }
 
     /**
