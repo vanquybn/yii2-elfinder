@@ -1919,7 +1919,11 @@ class elFinder {
      **/
     protected function _hash($path)
     {
-        return md5(basename($path));
+        $md = $path;
+        if(!empty($this->_options['root'])){
+            $md = str_replace($this->_options['root'],'',$path);
+        }
+        return md5($md);
     }
 
     /**
