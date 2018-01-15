@@ -1922,6 +1922,11 @@ class elFinder {
         $md = $path;
         if(!empty($this->_options['root'])){
             $md = str_replace($this->_options['root'],'',$path);
+            $md = str_replace('\\', '/', $md);
+            $md = strip_tags($md);
+            $md = stripslashes($md);
+            $md = strtolower($md);
+            $md = trim($md);
         }
         return md5($md);
     }
