@@ -1691,3 +1691,6 @@ tr.el-finder-droppable td.icon  p { background-position:5px -450px; }
 	-o-background-size: cover;      /* Opera*/
 	background-size: cover;         /* Generic*/
 }
+.el-finder-workzone p.el-finder-err{
+	left: 0%;
+}
