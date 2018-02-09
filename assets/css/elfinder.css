@@ -1680,7 +1680,9 @@ tr.el-finder-droppable td.icon  p { background-position:5px -450px; }
 	clear: both;
 }
 .image.ui-draggable-handle p,
-.directory.ui-draggable-handle p{
+.directory.ui-draggable-handle p,
+.el-finder-workzone p,
+.el-finder-cwd p, .el-finder-ql p{
 	float: none !important;
 }
 .image.ui-draggable-handle p{
