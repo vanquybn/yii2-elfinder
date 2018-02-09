@@ -1700,7 +1700,7 @@ class elFinder {
             } elseif ($deny == true) {
                 return false;
             } else {
-                return true;
+                return false;
             }
         }
     }
