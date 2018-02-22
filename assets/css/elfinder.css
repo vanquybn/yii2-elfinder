@@ -1694,3 +1694,7 @@ tr.el-finder-droppable td.icon  p { background-position:5px -450px; }
 .el-finder-workzone p.el-finder-err{
 	left: 0%;
 }
+.el-finder-dialog ul,
+.el-finder-dialog ul li {
+	float: none;
+}
