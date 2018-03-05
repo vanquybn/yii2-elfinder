@@ -559,6 +559,24 @@ class elFinder {
         $this->_content($dir, true);
     }
 
+    public static function buildRegularName($text)
+    {
+        $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+
+        // transliterate
+        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+        // remove unwanted characters
+        $text = preg_replace('~[^-\w]+~', '', $text);
+
+        // trim
+        $text = trim($text, '-');
+
+        // remove duplicate -
+        $text = preg_replace('~-+~', '-', $text);
+        return $text;
+    }
+
     /**
      * Upload files
      *
@@ -604,7 +622,7 @@ class elFinder {
                     $this->_errorData($_FILES['upload']['name'][$i], 'Not allowed file type');
                 } else {
                     $name = $this->_checkName($_FILES['upload']['name'][$i]);
-                    $file = $dir.DIRECTORY_SEPARATOR.$name;
+                    $file = $dir.DIRECTORY_SEPARATOR.self::buildRegularName($name);
                     $path_parts = pathinfo($file);
                     for($n = 1; file_exists($file);$n++){
                         $file = $dir.DIRECTORY_SEPARATOR."{$path_parts['filename']} ($n).{$path_parts['extension']}";
